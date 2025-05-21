@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Delius&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oldenburg&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reenie+Beanie&display=swap');
+
+@import "tailwindcss";
+
+
+@theme{
+  --color-secondary: #F3F4F6;
+  --color-primary: #2563EB;
+  --color-light: #6B7280;
+  --color-dark: #111827;
+  --font-inter: 'Inter';
+}
+
+@layer components{
+
+  .max-container{
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .padding-x{
+    @apply px-8 sm:px-16
+  }
+  .padding-y{
+    @apply py-8 sm:py-16
+  }
+
+  .card{
+    @apply shadow-lg ring-1 ring-slate-300 rounded px-4 py-2
+  }
+
+}
+
