@@ -11,6 +11,8 @@
     { "id": 9, "name": "Isaac Newton" },
     { "id": 10, "name": "Julia Roberts" }
   ],
+
+  
   "posts": [
     { "id": 1, "title": "Post 1 by Alice", "content": "Content for post 1", "userId": 1 },
     { "id": 2, "title": "Post 2 by Alice", "content": "Content for post 2", "userId": 1 },

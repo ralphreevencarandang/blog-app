@@ -9,7 +9,7 @@ const HomePage = ()=>{
       
             <div className="max-container padding-x">
                 <Hero/>
-                <Blogs/>
+                <Blogs isHome={true}/>
             </div>
  
           

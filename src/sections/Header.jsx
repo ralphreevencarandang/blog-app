@@ -20,7 +20,7 @@ const Header = ()=>{
                   
                 <div className="flex justify-between items-center gap-5 text-white font-inter cursor-pointer">
                            <NavLink  to='/blogs' className={ linkClass}>Browse</NavLink>
-                           <NavLink to='/asd' className={linkClass}>Add</NavLink>
+                           <NavLink to='/addBlogs' className={linkClass}>Add</NavLink>
                          
                 </div>
 
