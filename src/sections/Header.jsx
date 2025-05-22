@@ -1,8 +1,16 @@
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 
 const Header = ()=>{
+
+    
+    const linkClass = ({isActive}) => {
+        return isActive ? 'bg-blue-800 px-2 py-1 rounded' : 'hover:bg-blue-800 px-2 py-1 rounded'
+
+    }
+
+
     return(
-        <header className="w-full bg-primary sticky top-0">
+        <header className="w-full bg-primary sticky top-0 z-10">
             <div className="max-container padding-x flex justify-between items-center">
                 <div className="py-3">
                     <Link to='/'>
@@ -10,10 +18,11 @@ const Header = ()=>{
                     </Link>
                 </div>
                   
-                <ul className="flex justify-between items-center gap-5 text-white font-inter cursor-pointer">
-                            <li className="hover:bg-blue-800 px-2 py-1 rounded">Browse</li>
-                            <li className="hover:bg-blue-800 px-2 py-1 rounded">Add</li>
-                </ul>
+                <div className="flex justify-between items-center gap-5 text-white font-inter cursor-pointer">
+                           <NavLink  to='/blogs' className={ linkClass}>Browse</NavLink>
+                           <NavLink to='/asd' className={linkClass}>Add</NavLink>
+                         
+                </div>
 
             </div>
 
