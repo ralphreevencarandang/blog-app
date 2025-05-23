@@ -5,7 +5,7 @@ const CreateBlogPage = ()=>{
     return (
         <section className="max-container padding-x  flex justify-center items-center flex-col h-[86vh]">
             <h1 className="text-4xl pb-10 font-bold font-inter text-primary">Create Blog Page</h1>
-            <div className="w-full max-w-[500px] border-1 p-5 mb-10">
+            <div className="w-full max-w-[500px] border-1 p-5 mb-10 rounded border-slate-400">
                 <CustomInput label='Title' type="text" placeholder="Enter title"/>
                 <CustomTextarea label='Content'  placeholder="Enter content"/>
                 <Button label='Post' />

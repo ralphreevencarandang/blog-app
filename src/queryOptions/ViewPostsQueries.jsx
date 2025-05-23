@@ -1,10 +1,10 @@
 import { queryOptions } from "@tanstack/react-query";
 import axios from "../axios";
-const ViewPostsQueries = ()=>{
 
+const ViewPostsQueries = (id)=>{
     return[queryOptions({
-        queryKey:[],
-        queryFn: ()=> viewPost()
+        queryKey:['posts', id],
+        queryFn: ()=> viewPost(id)
     })]
 }
 
@@ -14,7 +14,8 @@ const viewPost = async(id)=>{
 
     try{
 
-        const response = axios.get(`/posts/${id}`);
+        const response = await axios.get(`/posts/${id}`);
+        console.log('View Post: ',   response.data)
         return response.data;
 
     }catch(error){

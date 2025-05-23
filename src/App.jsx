@@ -4,6 +4,7 @@ import MainLayout from "./layout/MainLayout";
 import NotFoundPage from "./pages/NotFoundPage";
 import BlogPage from "./pages/BlogsPage";
 import CreateBlogPage from "./pages/CreateBlogsPage";
+import ViewPostPage from "./pages/ViewPostPage";
 function App() {
 
   const router = createBrowserRouter(
@@ -14,6 +15,7 @@ function App() {
           <Route index element={ <HomePage/>}/>
           <Route path="/blogs" element={ <BlogPage/>}/>
           <Route path="/addBlogs" element={ <CreateBlogPage/>}/>
+          <Route path="/viewpost/:id" element={ <ViewPostPage/>}/>
         </Route>
         <Route path="*" element={ <NotFoundPage/>}/>
       </>

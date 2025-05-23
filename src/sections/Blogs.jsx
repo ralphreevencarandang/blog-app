@@ -31,7 +31,6 @@ const Blogs = ({isHome=false})=>{
                     type: "spring"
                 }}
             >
-
                 {data?.map((items, index) => 
                      <Card {...items} key={index}/>
                 )}
