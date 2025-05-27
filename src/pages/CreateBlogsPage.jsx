@@ -3,13 +3,10 @@ import CustomTextarea from "../components/FormComponents/CustomTextarea";
 import Button from "../components/Button";
 import { Formik, Form } from "formik";
 import { validationSchema } from "../schemas";
-import AddPostQueries from "../queryOptions/AddPostsQueries";
-import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
 import { useMutation} from "@tanstack/react-query";
 import { addPost } from "../queryOptions/AddPostsQueries";
+
 const CreateBlogPage = ()=>{
-    
         const mutation = useMutation({
         mutationFn: addPost,
         onSuccess: (data) => {
@@ -34,12 +31,12 @@ const CreateBlogPage = ()=>{
                     actions.setSubmitting(false);
                     }}
                 >
-                    {(props)=>(
+                    {({isSubmitting})=>(
                     <Form>
                         <div className="w-full max-w-[500px] border-1 p-5 mb-10 rounded border-slate-400">
                             <CustomInput label='Title' type="text" placeholder="Enter title" name='title'/>
                             <CustomTextarea label='Content'  placeholder="Enter content" name='content'/>
-                            <Button label='Post' type='submit'  />
+                            <Button label='Post' type='submit' disabled={isSubmitting} isSubmitting={isSubmitting} />
 
                         </div>
                     </Form>
