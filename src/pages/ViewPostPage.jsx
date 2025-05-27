@@ -31,8 +31,13 @@ const ViewPostPage = ()=>{
 
     const deletePost = async()=>{
         try{
+           
+
+            if( confirm('Do you want to delete this data? ')){
             const response = await  axios.delete(`/posts/${id}`);
-            navigate('/');
+              navigate('/');
+            }
+
         }catch(error){
             console.log(error)
         }
@@ -40,7 +45,7 @@ const ViewPostPage = ()=>{
 
 
     return(
-        <section className="max-container padding-x flex flex-col justify-center items-center">
+        <section className="max-container padding-x flex flex-col justify-center items-center h-[87vh]">
             <h1 className="font-inter text-4xl py-5 font-bold text-primary">View Post Page</h1>
             {isPending ? (<Loading/>) : (error ? <p>{error}</p> : 
                  <div className="w-full max-w-[500px] border-1 p-5 mb-10 rounded border-slate-400 text-center">
@@ -49,7 +54,7 @@ const ViewPostPage = ()=>{
 
                     <div className="w-full  flex gap-2 mt-2">
                         <button  onClick={() => mutation.mutate() } disabled={mutation.isPending} className="w-full rounded ring-1  cursor-pointer bg-red-500 text-white px-2 py-1 my-2 hover:bg-red-600">{mutation.isPending ? 'Deleting...' : 'Delete'}</button>
-                        <Link className="w-full rounded ring-1  cursor-pointer bg-yellow-300 text-white px-2 py-1 my-2 hover:bg-yellow-400">Edit</Link>
+                        <Link to={`/editpost/${data.id}`} className="w-full rounded ring-1  cursor-pointer bg-yellow-300 text-white px-2 py-1 my-2 hover:bg-yellow-400">Edit</Link>
                     </div>
                 </div>
             )}
