@@ -36,7 +36,6 @@ const EditPostPage = ()=>{
                 initialValues= {{title: data.title, content: data.content}} 
                 validationSchema={validationSchema}
                 onSubmit={(values, actions)=>{
-
                     updatePost(data.id, values)
                     navigate('/')
 
